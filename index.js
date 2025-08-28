@@ -98,7 +98,7 @@ getElement("parent-card").addEventListener("click", function (e) {
          
     }
 
-  if(e.target.className.includes("copy-text")){
+  if(e.target.className.includes("copy-btn")){
     const textElement = e.target.parentNode.parentNode.children[2];
 
       // Step 2: Get the text content
