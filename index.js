@@ -85,6 +85,40 @@ getElement("parent-card").addEventListener("click", function (e) {
 }
 
 
+function copyCount() {
+    // star mark Count start
+getElement("parent-card").addEventListener("click", function (e) {
+    // console.log(e.target)
+   
+    if (e.target.className.includes("copy-btn")) {
+        // alert("card clicked");
+        let copy = parseInt(document.getElementById("copy").innerText);
+        // console.log(heart)
+        document.getElementById("copy").innerText = copy + 1
+         
+    }
+
+  if(e.target.className.includes("copy-text")){
+    const textElement = e.target.parentNode.parentNode.children[2].innerText;
+
+      // Step 2: Get the text content
+      const textToCopy = textElement.textContent;
+
+      // Step 3: Use the Clipboard API to copy the text
+      navigator.clipboard.writeText(textToCopy)
+        .then(() => {
+          // Optional: Show confirmation
+          alert("Text copied to clipboard!");
+        })
+        .catch(err => {
+          console.error("Failed to copy text: ", err);
+        });
+  }
+    
+});
+}
+
+
 // Clear call history
 document.getElementById("clear-btn").addEventListener('click', function () {
             document.getElementById("call-history-container").innerHTML = "";
@@ -101,4 +135,5 @@ const now = new Date()
 //  })
 heartCount();
 makeCall();
+copyCount();
 
