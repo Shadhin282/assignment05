@@ -98,8 +98,8 @@ getElement("parent-card").addEventListener("click", function (e) {
          
     }
 
- // if(e.target.className.includes("copy-text")){
-    const textElement = e.target.parentNode.parentNode.children[2].innerText;
+  if(e.target.className.includes("copy-text")){
+    const textElement = e.target.parentNode.parentNode.children[2];
 
       // Step 2: Get the text content
       const textToCopy = textElement.textContent;
@@ -113,7 +113,7 @@ getElement("parent-card").addEventListener("click", function (e) {
         .catch(err => {
           console.error("Failed to copy text: ", err);
         });
- // }
+  }
     
 });
 }
